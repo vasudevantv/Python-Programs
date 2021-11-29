@@ -1,7 +1,5 @@
 # importing the modules
-import time
 import requests
-import os
 from bs4 import BeautifulSoup
   
 # target url
@@ -14,8 +12,5 @@ reqs = requests.get(url)
 soup = BeautifulSoup(reqs.text, 'html.parser')
   
 # displaying the title
-while True:
-  os.system('clear')
-  for title in soup.find_all('title'):
-      print(title.get_text())
-  time.sleep(60)
+for title in soup.find_all('title'):
+    print(title.get_text())
